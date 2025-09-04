@@ -63,21 +63,11 @@ p_FP_AI_unpriv = AI_unpriv_probabilities[0]
 t2_loc_arr = [-3.8, -1.9, -0.85, 0.25, 2.1]
 # ------------------------------------------------------------------------------------ #
 
-def run_single_simulation(seed: int,
-                           years: int = 51,
-                           total_n: int = 500000,
-                           frac_priv: float = 0.5) -> pd.DataFrame:
+def run_single_simulation_treatment_analysis(seed: int) -> pd.DataFrame:
     """
-    Run a single simulation with a specific random seed
+    single simulation with a specific random seed
 
-    Parameters:
-    seed : int, random seed for reproducibility
-    years : int, number of years to simulate
-    total_n : int, total population size
-    frac_priv : float, fraction of privileged group
-
-    Returns:
-    DataFrame with simulation statistics
+    returns dataframe with simulation statistics
     """
     np.random.seed(seed)
 
@@ -151,7 +141,7 @@ def parallel_simulations(
     with concurrent.futures.ProcessPoolExecutor(max_workers=n_cores) as executor:
         # Submit all tasks
         future_to_seed = {
-            executor.submit(run_single_simulation, seed.generate_state(1)[0]): seed
+            executor.submit(run_single_simulation_treatment_analysis, seed.generate_state(1)[0]): seed
             for seed in seeds
         }
 
