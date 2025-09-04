@@ -7,6 +7,12 @@
 ## Abstract
 Artificial intelligence (AI) has vast potential for improving healthcare delivery, but concerns over biases in these systems have raised important questions regarding fairness when deployed clinically. Most prior studies on fairness in clinical AI focus solely on performance disparities between subpopulations, which often fall short of connecting the technical outputs of AI systems with sociotechnical outcomes. In this work, we present a simulation-based approach to explore how statistical definitions of algorithmic fairness translate to fairness in long-term outcomes, using AI-assisted breast cancer screening as a case example.  We evaluate four fairness criteria and their impact on mortality rates and socioeconomic disparities, while also considering how radiologists’ reliance on AI and patients’ access to healthcare affect outcomes. Our results highlight how algorithmic fairness does not directly translate into fair and equitable outcomes, underscoring the importance of integrating sociotechnical perspectives in order to gain a holistic understanding of fairness in AI.   
 
+<p align="center">
+<img src="fig/fig1.png?raw=true" width="600">
+</p>
+
+
+
 ## Overview 
 
 
